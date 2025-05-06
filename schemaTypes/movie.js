@@ -8,7 +8,7 @@ export const movieSchema = defineType({
     {
         name:"main",
         title:"Main",
-        default:"main"
+        default:true
     },
     {
         name:"seo",
@@ -61,11 +61,13 @@ export const movieSchema = defineType({
       type: 'number',
       title: 'Rating',
       validation: Rule => Rule.min(0).max(10),
+      group:'main',
     }),
     defineField({
       name: 'poster',
       type: 'image',
       title: 'Poster Image',
+      group:'main',
       options: {
         hotspot: true,
       },
